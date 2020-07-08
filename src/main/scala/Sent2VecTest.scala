@@ -10,7 +10,7 @@ object Sent2VecTest {
     try {
       /* First you will have to load your model */
       println("start loadModel")
-      model = FastText.loadModel("/Users/kangpl/Documents/MA4/internship/sent2vec_wiki.en.bin")
+      model = FastText.loadModel("./sent2vec_wiki.en.bin") // the path of the model
       println("finish loadModel")
 
       // Obtaining a word vector
