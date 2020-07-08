@@ -1,4 +1,4 @@
-import java.util
+import java.util.Arrays;
 
 import fasttext.{FastText, Vector}
 
@@ -18,13 +18,9 @@ object Sent2VecTest {
       println(wv)
 
       // Obtaining word vectors
-//      val wvs: List[Vector] = model.getWordVectors(Arrays.asList("hello", "world", "!"))
-//      import scala.collection.JavaConverters._
-//      wvs.asScala.toList.foreach(v => println(v))
-
-      // Obtaining sentence (document) embeddings
-      val sv: Vector = model.getWordVectors(util.Arrays.asList("hello", "world"))
-      println(sv)
+      import scala.collection.JavaConverters._
+      val wvs: List[Vector] = model.getWordVectors(Arrays.asList("hello", "world", "!")).asScala.toList
+      wvs.foreach(v => println(v))
 
 //      def writeFile(filename: String, lines: Array[Float]): Unit = {
 //        val file = new File(filename)
